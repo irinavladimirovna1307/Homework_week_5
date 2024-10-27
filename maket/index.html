@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>CSS Flexbox</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      #body {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        width: 1200px;
+        padding: 15px;
+        margin: auto;
+      }
+      .flex-element-main {
+        font-size: 14px;
+        justify-content: space-around;
+        background: rgb(253, 252, 250);
+        text-align: center;
+        width: 300px;
+        height: 100px;
+        margin: 15px;
+        background-color: rgb(248, 225, 182);
+        padding-top: 15px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+
+      .col {
+        display: flexbox;
+        padding-right: 15px;
+        padding-left: 15px;
+        width: 1200px;
+      }
+
+      .col__article,
+      .col__aside {
+        -ms-flex: 0 0 39%;
+        flex: 0 0 39%;
+        max-width: 39%;
+      }
+
+      @media (min-width: 992px) {
+        .col__article {
+          -ms-flex: 0 0 710px;
+          flex: 0 0 710px;
+          max-width: 710px;
+          margin-left: 15px;
+        }
+
+        .col__aside {
+          -ms-flex: 0 0 460px;
+          flex: 0 0 460px;
+          width: 460px;
+        }
+      }
+
+      .header {
+        background-color: #e0e0e0;
+      }
+
+      .col__article {
+        background-color: #fff8e1;
+      }
+
+      .col__aside {
+        background-color: #dcedc8;
+      }
+      .flex-container {
+        display: flex;
+        padding: 40px;
+      }
+      .flex-element {
+        width: 300px;
+        height: 100px;
+        margin: 15px;
+        font-size: 14px;
+        justify-content: space-around;
+        background: rgb(253, 252, 250);
+        text-align: center;
+        padding-top: 15px;
+      }
+      .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: #dddcdc;
+      }
+    </style>
+  </head>
+
+  <body id="body">
+    <header class="container header">
+      <div
+        style="
+          font-size: 20px;
+          text-align: center;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-weight: bold;
+        "
+      >
+        [Шапка страницы]
+      </div>
+    </header>
+    <main class="container main" style="display: flex">
+      <div class="row">
+        <article class="col col__article">
+          <div
+            style="
+              font-size: 20px;
+              text-align: center;
+              padding-top: 30px;
+              padding-bottom: 30px;
+              font-weight: bold;
+            "
+          >
+            [Основная часть]
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-evenly;
+            "
+          >
+            <div class="flex-element-main" style="width: 350px">
+              <h1>[Ещё 1]</h1>
+            </div>
+            <div class="flex-element-main" style="width: 350px">
+              <h2>[Ещё 2]</h2>
+            </div>
+          </div>
+          <div
+            style="display: flex; text-align: center; width: 658px"
+            class="flex-element-main"
+          >
+            <h2>[Ещё 3]</h2>
+          </div>
+        </article>
+        <aside
+          class="col col__aside"
+          style="
+            font-size: 20px;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-weight: bold;
+            min-height: 200px;
+          "
+        >
+          [Боковая область]
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="flex-element"><h2>[Секция футера 1]</h2></div>
+      <div class="flex-element"><h2>[Секция футера 2]</h2></div>
+      <div class="flex-element"><h2>[Секция футера 3]</h2></div>
+      <div class="flex-element"><h2>[Секция футера 4]</h2></div>
+    </footer>
+  </body>
+</html>
